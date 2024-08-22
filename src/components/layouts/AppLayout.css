@@ -1,0 +1,11 @@
+/* AppLayout.css */
+.layout-container {
+    display: flex;
+    min-height: calc(100vh - 60px); /* Adjust based on Header/Footer height */
+}
+.content {
+    margin-left: 200px; /* Adjust based on Sidebar width */
+    padding: 20px;
+    flex: 1;
+    background-color: #ffffff;
+}

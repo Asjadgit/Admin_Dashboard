@@ -1,0 +1,27 @@
+/* General Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 5px;
+}
+
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 5px;
+    font-size: 0.9em;
+    margin-bottom: 2pz;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin: 20px 0;
+    }
+}

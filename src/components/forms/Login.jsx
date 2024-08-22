@@ -3,11 +3,14 @@ import { MdOutgoingMail } from "react-icons/md";
 import { FaUserLock } from "react-icons/fa";
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [mail, setMail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+
+    // const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,6 +25,7 @@ const Login = () => {
     
             if (response.data) {
                 console.log('Login successful');
+                // navigate('/dashboard');
                 // Handle successful login (e.g., redirect, store token, etc.)
             } else {
                 console.error('Login failed');
@@ -37,7 +41,7 @@ const Login = () => {
     };
     
     return (
-        <div>
+        <>
             <div className='container'>
                 <form onSubmit={handleSubmit}>
                     <h1>Admin Login</h1>
@@ -47,18 +51,18 @@ const Login = () => {
 
                     <div className='input-group'>
                         <MdOutgoingMail className='input-icon' />
-                        <input name="email" id="email" placeholder="Enter email" value={mail} onChange={(e) => setMail(e.target.value)} />
+                        <input type='email' name="email" id="email" placeholder="Enter email" value={mail} onChange={(e) => setMail(e.target.value)} />
                     </div>
 
                     <div className='input-group'>
                         <FaUserLock className='input-icon' />
-                        <input name="password" id="password" placeholder="Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input type='password' name="password" id="password" placeholder="Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
 
                     <input type='submit' />
                 </form>
             </div>
-        </div>
+        </>
     )
 }
 

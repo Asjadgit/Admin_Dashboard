@@ -1,0 +1,56 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    color: #ec3c07; /* Customize this color to your preference */
+    margin-right: 20px
+}
+
+.logo svg {
+    margin-right: 20px; /* Space between logo icon and text */
+}
+
+/* Navigation Links */
+.header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.header a:hover {
+    color: #ff5722; /* Highlight color on hover */
+}
+.header-links a.active{
+    color:#ff5722;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header a {
+        margin: 10px 0;
+    }
+}

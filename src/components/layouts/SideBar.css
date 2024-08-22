@@ -1,0 +1,45 @@
+.sidebar {
+    width: 200px;
+    padding: 15px;
+    background-color: #4b6584;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.sidebar a:hover {
+    background-color: #e9ecef;
+    padding: 10px;
+}
+
+.nested-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nested-menu.show {
+    max-height: 300px; /* Set a value larger than the total height of the nested items */
+}
+
+.nested-menu a {
+    padding: 5px 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.nested-menu.show a {
+    opacity: 1;
+}
+
+.nested-menu a {
+    opacity: 0;
+}
