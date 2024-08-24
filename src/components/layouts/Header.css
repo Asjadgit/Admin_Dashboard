@@ -5,7 +5,7 @@ body {
 }
 
 /* Header Styles */
-header {
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,37 +20,56 @@ header {
     align-items: center;
     font-size: 2em;
     color: #ec3c07; /* Customize this color to your preference */
-    margin-right: 20px
-}
-
-.logo svg {
-    margin-right: 20px; /* Space between logo icon and text */
 }
 
 /* Navigation Links */
-.header a {
+.header-links {
+    display: flex;
+    align-items: center;
+}
+
+.header-links a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 24px;
     font-size: 1em;
     transition: color 0.3s ease;
 }
 
-.header a:hover {
+.header-links a.active {
+    color: #ff5722; /* Highlight color for active link */
+}
+
+.header-links a:hover {
     color: #ff5722; /* Highlight color on hover */
 }
-.header-links a.active{
-    color:#ff5722;
+
+/* Logout Icon */
+.logout {
+    margin-left: 24px;
+}
+
+.logout svg {
+    font-size: 2em;
+    cursor: pointer; /* Add pointer cursor for better UX */
+}
+.logout svg:hover{
+    color: #ff5722;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    header {
+    .header {
         flex-direction: column;
         text-align: center;
     }
 
-    header a {
+    .header-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .header-links a {
         margin: 10px 0;
     }
 }

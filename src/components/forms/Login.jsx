@@ -5,12 +5,12 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({onLogin}) => {
     const [mail, setMail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -25,9 +25,15 @@ const Login = () => {
     
             if (response.data) {
                 console.log('Login successful');
-                // navigate('/dashboard');
+                onLogin();
+                navigate('/');
                 // Handle successful login (e.g., redirect, store token, etc.)
-            } else {
+            } else if(!mail && !password){
+                setError('Please fill all fields');
+                setTimeout(() => {
+                    setError('') 
+                 }, 3000);
+            }else {
                 console.error('Login failed');
                 setError('Invalid email or password');
                 setTimeout(() => {

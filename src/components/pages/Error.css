@@ -1,0 +1,40 @@
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #fff; /* Light gray background */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.error-container img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.error-container h1 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.error-container a {
+    text-decoration: none;
+    color: #007bff; /* Bootstrap primary color */
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.error-container a:hover {
+    background-color: #007bff;
+    color: white;
+}

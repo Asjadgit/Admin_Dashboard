@@ -4,10 +4,10 @@ import Header from "./Header";
 import SideBar from "./SideBar";
 import "./AppLayout.css";
 
-const AppLayout = () => {
+const AppLayout = ({onLogout}) => {
     return (
         <>
-            <Header />
+            <Header onLogout={onLogout} />
             <div className="layout-container">
                 <SideBar />
                 <main className="content">
