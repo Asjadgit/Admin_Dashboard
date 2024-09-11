@@ -1,8 +1,10 @@
 import { useState } from "react";
 import './SideBar.css';
+import { NavLink, useNavigate } from "react-router-dom";
 
 const SideBar = () => {
     const [activeMenu, setActiveMenu] = useState(null);
+    const navigate = useNavigate();
 
     const toggleMenu = (menuName) => {
         setActiveMenu(activeMenu === menuName ? null : menuName);
@@ -10,29 +12,19 @@ const SideBar = () => {
 
     return (
         <div className="sidebar">
-            <a href="#">Overview</a>
+            <NavLink to="/">Overview</NavLink>
             <a href="#" onClick={() => toggleMenu('products')}>
                 Products
             </a>
             <div className={`nested-menu ${activeMenu === 'products' ? 'show' : ''}`}>
-                <a href="#">All Products</a>
-                <a href="#">Laptops</a>
-                <a href="#">Mobiles</a>
-                <a href="#" onClick={() => toggleMenu('accessories')}>
-                    Accessories
-                </a>
-            </div>
-            <div className={`nested-menu ${activeMenu === 'accessories' ? 'show' : ''}`}>
-                <a href="#">Batteries</a>
-                <a href="#">Chargers</a>
-                <a href="#">Earphones</a>
-                <a href="#">Bags</a>
+                <NavLink to="/all-products">All Products</NavLink>
+                <NavLink to="/new-product">Add New Product</NavLink>
             </div>
             <a href="#" onClick={() => toggleMenu('orders')}>
                 Orders
             </a>
             <div className={`nested-menu ${activeMenu === 'orders' ? 'show' : ''}`}>
-                <a href="#">All Orders</a>
+                <NavLink to="/all-orders">All Orders</NavLink>
                 <a href="#">Pending</a>
                 <a href="#">Delivered</a>
             </div>

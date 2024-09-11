@@ -7,6 +7,9 @@ import About from './components/pages/About';
 import Contact from './components/pages/Contact';
 import Error from './components/pages/ErrorPage';
 import AppLayout from './components/layouts/AppLayout';
+import AddProduct from './components/pages/AddProduct';
+import AllProducts from './components/pages/AllProduct';
+import AllOrders from './components/pages/AllOrders';
 
 export const Welcome = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -44,6 +47,18 @@ export const Welcome = () => {
         {
           path: "/contact",
           element: isAuthenticated ? <Contact /> : <Login onLogin={handleLogin} />,
+        },
+        {
+          path: "/new-product",
+          element: isAuthenticated ? <AddProduct /> : <Login onLogin={handleLogin} />,
+        },
+        {
+          path: "/all-products",
+          element: isAuthenticated ? <AllProducts /> : <Login onLogin={handleLogin} />,
+        },
+        {
+          path: "/all-orders",
+          element: isAuthenticated ? <AllOrders /> : <Login onLogin={handleLogin} />,
         },
       ],
     },
