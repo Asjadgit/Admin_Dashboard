@@ -16,7 +16,6 @@ This project is an admin dashboard application with a React frontend and a Larav
 
 - **Laravel Backend**:
   - RESTful API for data handling
-  - Authentication and authorization
   - Database management
 
 ## Getting Started
