@@ -85,6 +85,14 @@ Make sure you have the following installed:
     ```
 
    The frontend should now be running at `http://localhost:5173`.
+4. **Install the React Libraries**:
+    ```bash
+    npm install recharts --legacy-peer-deps
+    npm install react-table --legacy-peer-deps
+    npm install @mui/material @emotion/react @emotion/styled @mui/x-data-grid
+    ```
+
+   The frontend should now be running at `http://localhost:5173`.
 
 ## Usage
 
