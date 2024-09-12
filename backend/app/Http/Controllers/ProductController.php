@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function showCustomers()
+    {
+        $customers = User::all();
+        return response()->json(['data' => $customers]);
+    }
     public function showProduct()
     {
         $products = Product::all();
@@ -16,7 +22,7 @@ class ProductController extends Controller
     {
         try {
             // Validate the incoming request data
-        
+
 
         // Handle the image upload
         if ($request->hasFile('image')) {

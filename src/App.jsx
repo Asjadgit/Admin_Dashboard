@@ -10,6 +10,9 @@ import AppLayout from './components/layouts/AppLayout';
 import AddProduct from './components/pages/AddProduct';
 import AllProducts from './components/pages/AllProduct';
 import AllOrders from './components/pages/AllOrders';
+import PendingOrders from './components/pages/PendingOrders';
+import Delivered from './components/pages/Delivered';
+import Customers from './components/pages/Customers';
 
 export const Welcome = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -59,6 +62,18 @@ export const Welcome = () => {
         {
           path: "/all-orders",
           element: isAuthenticated ? <AllOrders /> : <Login onLogin={handleLogin} />,
+        },
+        {
+          path: "/pending-orders",
+          element: isAuthenticated ? <PendingOrders /> : <Login onLogin={handleLogin} />,
+        },
+        {
+          path: "/delivered-orders",
+          element: isAuthenticated ? <Delivered /> : <Login onLogin={handleLogin} />,
+        },
+        {
+          path: "/customers",
+          element: isAuthenticated ? <Customers /> : <Login onLogin={handleLogin} />,
         },
       ],
     },

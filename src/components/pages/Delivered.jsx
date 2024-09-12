@@ -1,24 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid } from "@mui/x-data-grid";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
-const AllOrders = () => {
-    const [orders, setOrders] = useState([]);
 
-    const getOrders = async () => {
+const Delivered = () => {
+
+    const [Pending, setPending] = useState([]);
+
+    const pending = async () => {
         try {
-            const res = await axios.get('http://127.0.0.1:8001/api/AllOrders');
-            setOrders(res.data.data);
+            const res = await axios.get('http://127.0.0.1:8001/api/delivered');
+            setPending(res.data.data);
         } catch (error) {
             console.log(error);
         }
-    };
+    }
 
     useEffect(() => {
-        getOrders();
+        pending();
     }, []);
-
-
+    
     const columns = [
         { field: 'product_name', headerName: 'Product Name', width: 180 },
         { field: 'user_name', headerName: 'User', width: 150 },
@@ -28,7 +29,7 @@ const AllOrders = () => {
         { field: 'status', headerName: 'Status', width: 150 },
     ];
 
-    const rows = orders.map(order => ({
+    const rows = Pending.map(order => ({
         id: order.id,
         product_name: order.product.Product_name,
         user_name: order.user.name,
@@ -40,7 +41,7 @@ const AllOrders = () => {
 
     return (
         <div style={{ height: 400, width: '100%' }}>
-            <h1>All Orders</h1>
+            <h1>Delivered Orders</h1>
             <DataGrid
                 rows={rows}
                 columns={columns}
@@ -54,6 +55,6 @@ const AllOrders = () => {
             />
         </div>
     );
-};
+}
 
-export default AllOrders;
+export default Delivered

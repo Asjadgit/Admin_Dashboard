@@ -25,19 +25,14 @@ const SideBar = () => {
             </a>
             <div className={`nested-menu ${activeMenu === 'orders' ? 'show' : ''}`}>
                 <NavLink to="/all-orders">All Orders</NavLink>
-                <a href="#">Pending</a>
-                <a href="#">Delivered</a>
+                <NavLink to="/pending-orders">Pending</NavLink>
+                <NavLink to="/delivered-orders">Delivered</NavLink>
             </div>
-            <a href="#">
-                Reports
-            </a>
             <a href="#" onClick={() => toggleMenu('customers')}>
                 Customers
             </a>
             <div className={`nested-menu ${activeMenu === 'customers' ? 'show' : ''}`}>
-                <a href="#">All Customers</a>
-                <a href="#">New Customers</a>
-                <a href="#">Old Customers</a>
+                <NavLink to="/customers">All Customers</NavLink>
             </div>
         </div>
     );
